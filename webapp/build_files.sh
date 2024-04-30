@@ -1,10 +1,6 @@
 #!/bin/bash
-
-# Buat virtual environment jika belum ada
-python3.9 -m venv myenv
-
 # Aktifkan virtual environment
-source env/bin/activate
+source env/Scripts/activate
 
 # Install dependencies
 pip install -r requirements.txt
