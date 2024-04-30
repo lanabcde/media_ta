@@ -2,12 +2,12 @@
     "version": 2,
     "builds": [
       {
-        "src": "webapp/wsgi.py",
+        "src": "../webapp/webapp/wsgi.py",
         "use": "@vercel/python",
         "config": { "maxLambdaSize": "15mb", "runtime": "python3.9","venvPath": "../env" }
       },
       {
-        "src": "build_files.sh",
+        "src": "../webapp/build_files.sh",
         "use": "@vercel/static-build",
         "config": {
           "distDir": "staticfiles_build"
@@ -16,12 +16,12 @@
     ],
     "routes": [
       {
-        "src": "/static/(.*)",
-        "dest": "/static/$1"
+        "src": "../webapp/static/(.*)",
+        "dest": "../webapp/static/$1"
       },
       {
-        "src": "/(.*)",
-        "dest": "webapp/wsgi.py"
+        "src": "../webapp/(.*)",
+        "dest": "../webapp/webapp/wsgi.py"
       }
     ]
   }
